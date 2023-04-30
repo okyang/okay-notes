@@ -2,24 +2,6 @@
 
 Following the tutorial blog series by [Digital Ocean](https://www.digitalocean.com/community/tutorial_series/how-to-manage-remote-servers-with-ansible).
 
-## Table of Contents
-<!-- TOC start -->
-
-- [How to Manage Remote Servers w/ Ansible Tutorial](#how-to-manage-remote-servers-w-ansible-tutorial)
-  * [Introduction to Configuration Management](#introduction-to-configuration-management)
-    + [Terms](#terms)
-  * [How to install and configure Ansible on Ubuntu 20.04](#how-to-install-and-configure-ansible-on-ubuntu-2004)
-  * [How to Set Up Ansible Inventories](#how-to-set-up-ansible-inventories)
-  * [How to Manage Multiple Servers with Ansible Ad Hoc Commands](#how-to-manage-multiple-servers-with-ansible-ad-hoc-commands)
-    + [Terms](#terms-1)
-    + [Patterns](#patterns)
-  * [How to Execute Ansible Playbooks to Automate Server Setup](#how-to-execute-ansible-playbooks-to-automate-server-setup)
-  * [References](#references)
-
-    <!-- TOC end -->
-
-    <!-- TOC --><a name="how-to-manage-remote-servers-w-ansible-tutorial"></a>
-
 ## Introduction to Configuration Management
 
 - **Configuration Management**, also referred to as IT automation
@@ -140,11 +122,13 @@ Following the tutorial blog series by [Digital Ocean](https://www.digitalocean.c
     This was my output
 
    ```bash
-   owen@LAPTOP-TOOAF9UL:~/ansible_tutorial$ ansible -i raspi_hosts all -m ping -u pi
-   server1 | SUCCESS => {
-       "changed": false,
-       "ping": "pong"
-   }
+    owen-raspi | SUCCESS => {
+        "ansible_facts": {
+            "discovered_interpreter_python": "/usr/bin/python"
+        },
+        "changed": false,
+        "ping": "pong"
+    }
    ```
 
 4. Running Ad-Hoc Commands
@@ -152,12 +136,12 @@ Following the tutorial blog series by [Digital Ocean](https://www.digitalocean.c
    These are commands you can normally execute on a ssh server. In this case we run it using ansible. You can replace `df -h` with any command you like. (replace ip address and username as appropriate)
 
    ```bash
-   ansible -i inventory all -a "df -h" -u pi
+   ansible -i inventory all -a "df -h" -u owen
 
    # some more ad-hoc commands
    # -----------------------
    # installing the latest version of vim
-   ansible -i raspi_hosts all -m apt -a "name=vim state=latest" -u pi
+   ansible -i raspi_hosts all -m apt -a "name=vim state=latest" -u owen
 
    # checking the uptime of every host in the `servers` group
    ansible -i raspi_hosts servers -a "uptime" -u pi
@@ -504,3 +488,4 @@ Following the tutorial blog series by [Digital Ocean](https://www.digitalocean.c
 
 1. [How to Manage Remote Servers w/ Ansible](https://www.digitalocean.com/community/tutorial_series/how-to-manage-remote-servers-with-ansible) - A digital ocean tutorial for using ansible
 2. [Digital Ocean - Ansible Cheat Sheet Guide](https://www.digitalocean.com/community/cheatsheets/how-to-use-ansible-cheat-sheet-guide) - a great resource for a bunch of different ansible tips and recipes.
+3. [Github - Awesome Ansible](https://github.com/ansible-community/awesome-ansible)

@@ -3,4 +3,4 @@ Just some notes I take while I learn about software development tools. They're o
 
 
 ## Ansible
-- [ Intro to Ansible Notes](./intro_to_ansible.md)
+- [ Intro to Ansible Notes](./intro_to_ansible/intro_to_ansible.md)

@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Install Packages
+      apt: name={{ item }} update_cache=yes state=latest
+      loop:
+        - "gpac"
+      tags: [ "setup" ]
+
+    - name: Install a .deb package from the internet
+      apt:
+        deb: "{{ item }}"
+      loop:
+        - "https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_armv7.deb"
+        - "https://github.com/sharkdp/bat/releases/download/v0.23.0/bat_0.23.0_armhf.deb"
+      tags: [ "setup" ]
