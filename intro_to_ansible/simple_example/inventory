@@ -1,0 +1,6 @@
+[raspi]
+{ inventory item name } ansible_host={ remote machine ip } ansible_user={ remote machine user}
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+
