@@ -65,6 +65,8 @@
    test/message Hello World!
    ```
 
+![MQTT Suscribe and Publish Demo](assets/demo.gif)
+
 If you're running into trouble with the test above. you may be experiencing some firewall issues. You can refer to this stack overflow post: [**Stack Overflow - mosquito server refuses connections**](https://askubuntu.com/questions/1121524/mosquito-server-refuses-connections-ubuntu-18-04) .
 
 # References
