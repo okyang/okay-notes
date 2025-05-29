@@ -36,3 +36,20 @@ owen-raspi ansible_host=10.0.0.193 ansible_user=owen
 ```bash
 ansible-playbook -i inventory playbook.yml
 ```
+
+## Notes
+Line-by-line explanation of `playbook.yml`
+
+```
+become: true
+```
+- become the super user
+
+```
+    - name: Install Packages
+      apt: name={{ item }} update_cache=yes state=latest
+      loop:
+        - "gpac"
+```
+- use `apt` to install the following packages: `gpac`
+  
