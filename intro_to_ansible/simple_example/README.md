@@ -52,4 +52,7 @@ become: true
         - "gpac"
 ```
 - use `apt` to install the following packages: `gpac`
-  
+
+
+## Other
+- [Ansible Linux Setup](https://github.com/okyang/ansible-linux-setup) - Here's a real example I use to setup my linux desktop
