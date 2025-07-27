@@ -2,6 +2,8 @@
 
 My primary use case for setting up a very basic [NAS](https://en.wikipedia.org/wiki/Network-attached_storage) to back up files from my laptop and other devices to a portable SSD. This is really basic, and there are a lot of enhancements that can be made for sure. If you're interested in those consideration, check out the "Further Reading and Improvements" section below. Otherwise, here's how you build one for yourself!
 
+<img src="./assets/raspi_nas_thumbnail.jpg" alt="thumbnail" width="500"/>
+
 ## Materials Used
 ****
 - Raspberry Pi 4
